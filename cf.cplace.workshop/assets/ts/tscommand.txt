@@ -5,3 +5,4 @@
 ts/app.ts
 ts/controllers/DummyCtrl.ts
 ts/directives/dummyDirective.ts
+ts/models.ts
