@@ -22,15 +22,8 @@ import cf.cplace.platform.widget.WidgetHelper;
  */
 public class WorkshopWidgetTypes {
 
-    public static class EMPLOYEE {
+    public static class WIDGETCONFIG {
 
-        public static final Message department_name = new Message() {
-        };
-
-        public static final MultiPageReferenceAttributeDef DEPARTMENT =
-                AttributeDef.build("cf.cplace.workshop.department", department_name,
-                        TypeConstraintFactories.linkPageConstraint(Multiplicities.atLeastOne, "cf.cplace.workshop.department", null, true)).withShowInNewDialog()
-                        .withAllowedDuplicates();
 
 
         public static final Message employeeId_name = new Message() {
@@ -40,21 +33,6 @@ public class WorkshopWidgetTypes {
                 AttributeDef.build("cf.cplace.workshop.employeeId", employeeId_name,
                         TypeConstraintFactories.stringConstraint(Multiplicities.exactlyOne));
 
-
-        public static final Message employeeName_name = new Message() {
-        };
-        public static final Message employeeName_shortName = new Message() {
-        };
-
-        public static final SingleStringAttributeDef EMPLOYEENAME =
-                AttributeDef.build("cf.cplace.workshop.employeeName", employeeName_name,
-                        TypeConstraintFactories.stringConstraint(Multiplicities.exactlyOne))
-                        .withLocalizedShortName(employeeName_shortName);
-
-        public static final Message name_singular = new Message() {
-        };
-        public static final Message name_plural = new Message() {
-        };
-        public static final TypeDef TYPE = new TypeDef("Employee", EMPLOYEEID, EMPLOYEENAME, DEPARTMENT);
+        public static final TypeDef TYPE = new TypeDef("Employee", EMPLOYEEID);
     }
 }

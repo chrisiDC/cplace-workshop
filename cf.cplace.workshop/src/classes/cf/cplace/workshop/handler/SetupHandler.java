@@ -4,7 +4,6 @@
 
 package cf.cplace.workshop.handler;
 
-import cf.cplace.platform.PlatformAppTypes;
 import cf.cplace.platform.PlatformAppTypes.DEFAULT_PAGE_TYPE;
 import cf.cplace.platform.assets.WidgetContainer;
 import cf.cplace.platform.assets.custom.WidgetConfiguration;
@@ -18,12 +17,10 @@ import cf.cplace.platform.handler.AbstractTestSetupHandler;
 import cf.cplace.platform.handler.Forwarder;
 import cf.cplace.platform.handler.Line;
 import cf.cplace.platform.handler.Station;
-import cf.cplace.platform.internationalization.Message;
 import cf.cplace.platform.script.WidgetTypes;
 import cf.cplace.platform.script.widgets.EmbeddedSearchAsTableWidgetDefinition;
 import cf.cplace.platform.test.TestHelper;
 import cf.cplace.platform.test.page.PageTestHelper;
-import cf.cplace.workshop.WorkshopAppTypes;
 import cf.cplace.workshop.WorkshopAppTypes.DEPARTMENT;
 import cf.cplace.workshop.WorkshopAppTypes.EMPLOYEE;
 import cf.cplace.workshop.WorkshopPlugin;
@@ -112,7 +109,7 @@ public class SetupHandler extends AbstractTestSetupHandler {
         wco.reorder(layout);
 
         WidgetConfiguration widgetConfig = WidgetConfiguration.createWidgetConfigurationWithRandomId(WorkshopWidgetDefinition.KIND);
-        widgetConfig.set(WorkshopWidgetTypes.EMPLOYEE.EMPLOYEEID, "abc");
+        widgetConfig.set(WorkshopWidgetTypes.WIDGETCONFIG.EMPLOYEEID, "abc");
         wco.addWidget(widgetConfig, 0, 0);
 
         result.persist();

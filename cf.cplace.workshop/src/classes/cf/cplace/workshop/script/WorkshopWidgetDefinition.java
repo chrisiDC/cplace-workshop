@@ -7,7 +7,6 @@ import org.json.JSONObject;
 import cf.cplace.platform.assets.custom.WidgetConfiguration;
 import cf.cplace.platform.assets.custom.def.TypeDef;
 import cf.cplace.platform.internationalization.Message;
-import cf.cplace.platform.script.WidgetTypes;
 import cf.cplace.platform.services.App;
 import cf.cplace.platform.template.Escaping;
 import cf.cplace.platform.template.PrintSubstitution;
@@ -32,7 +31,7 @@ public class WorkshopWidgetDefinition extends WidgetDefinition {
 
     @Override
     public TypeDef getConfigurationType() {
-        return WorkshopWidgetTypes.EMPLOYEE.TYPE;
+        return WorkshopWidgetTypes.WIDGETCONFIG.TYPE;
     }
 
     @Override
@@ -40,15 +39,16 @@ public class WorkshopWidgetDefinition extends WidgetDefinition {
         return widgetName;
     }
 
-    public WidgetTemplateSubstitution getContentSubstitution(WidgetConfiguration conf, WidgetSubstitutionParameters params) {
+    public WidgetTemplateSubstitution getContentSubstitution(final WidgetConfiguration conf, WidgetSubstitutionParameters params) {
         return new WidgetTemplateSubstitution() {
             @Override
             public void putSubstitutions(Template template) {
-                template.put("data", new PrintSubstitution(Escaping.htmlAttribute) {
+                template.put("employeeId", new PrintSubstitution() {
                     @Override
                     protected String print() {
-                        return new JSONObject().toString();
+                        return conf.get(WorkshopWidgetTypes.WIDGETCONFIG.EMPLOYEEID);
                     }
+
                 });
             }
         };
