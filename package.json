@@ -1,5 +1,5 @@
 {
-  "name": "cplace-bmw",
+  "name": "cplace-workshop",
   "version": "1.0.0",
   "description": "",
   "dependencies": {
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/collaborationFactory/cplace-customer-repo-skeleton.git"
+    "url": "git+https://github.com/collaborationFactory/cplace-workshop.git"
   },
   "private": true
 }
