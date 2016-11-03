@@ -1,1 +1,3 @@
 /generated_js/tsc.js
+/3rdparty/chance.js
+

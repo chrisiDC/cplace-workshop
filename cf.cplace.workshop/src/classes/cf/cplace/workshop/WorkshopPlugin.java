@@ -13,6 +13,9 @@ import cf.cplace.workshop.script.WorkshopWidgetDefinition;
 
 public final class WorkshopPlugin extends Plugin implements MustBeActivated {
 
+    //this is extension is needed to use js libraries
+    public final CombinedAndCompressedPluginJavaScriptExtension JsExtension = new CombinedAndCompressedPluginJavaScriptExtension();
+
     private static WorkshopPlugin instance = new WorkshopPlugin();
 
     public final TestSetupHandlerExtension testSetupHandlerExtension = new TestSetupHandlerExtension(SetupHandler.class);
@@ -26,7 +29,7 @@ public final class WorkshopPlugin extends Plugin implements MustBeActivated {
 
     public final WorkshopApp app = new WorkshopApp();
 
-    public final CombinedAndCompressedPluginJavaScriptExtension javaScriptIncludes = new CombinedAndCompressedPluginJavaScriptExtension();
+
 
     public final SingleAngularModuleExtension angularModulesExtension = new SingleAngularModuleExtension();
 
